@@ -1,0 +1,36 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Which organization are you looking into furthering your career?",
+            "wrap": true,
+            "size": "default",
+            "spacing": "none"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "KPMG",
+            "data": "KPMG"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Deloitte",
+            "data": "Deloitte"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Ernst & Young",
+            "data": "EY"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "PricewaterhouseCoopers",
+            "data": "PWC"
+        }
+    ]
+}

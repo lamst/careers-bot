@@ -1,0 +1,35 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "While I understand you would like to pursue career in other area, I believe you will find it intriguing to pursue career in one of the following companies...",
+            "wrap": true,
+            "spacing": "none"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "KPMG",
+            "data": "KPMG"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Deloitte",
+            "data": "Deloitte"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Ernst & Young",
+            "data": "EY"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "PricewaterhouseCoopers",
+            "data": "PWC"
+        }
+    ]
+}

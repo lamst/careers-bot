@@ -1,0 +1,45 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "What kind of question do you have about applying to work for KPMG as a graduate?",
+            "wrap": true,
+            "spacing": "none"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "General questions",
+            "data": "General questions"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Applying",
+            "data": "Applying"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Assessment test",
+            "data": "assessment test"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Interviews",
+            "data": "Interviews"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "The offer stage",
+            "data": "The offer stage"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Starting new job",
+            "data": "Start new job"
+        }
+    ]
+}

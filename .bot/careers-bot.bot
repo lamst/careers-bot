@@ -1,0 +1,18 @@
+{
+    "name": "Careers Bot",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "appId": "",
+            "appPassword": "",
+            "endpoint": "http://localhost:8484/api/messages",
+            "id": "e2946c10-c254-11e9-8060-85936102ebfc",
+            "name": "http://localhost:8484/api/messages"
+        }
+    ],
+    "padlock": "",
+    "version": "2.0",
+    "overrides": null,
+    "path": "C:\\Users\\chulam\\Labs\\careers-bot\\.bot\\careers-bot.bot"
+}
