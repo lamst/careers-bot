@@ -13,5 +13,9 @@ namespace Microsoft.CareersBot
         /// </summary>
         /// <value><c>true</c> if the user was greeted previously, <c>false</c> otherwise</value>
         public bool WasGreeted { get; set; } = false;
+
+        public Companies Company { get; set; } = Companies.NotSupported;
+
+        public string QuestionType { get; set; }
     }
 }

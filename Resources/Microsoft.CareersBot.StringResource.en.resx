@@ -118,9 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ErrorHelpNotFound" xml:space="preserve">
-    <value>I am sorry but I afraid I am not able to provide adequate feedback to what you asked but let me know if you still want some of my career advise.</value>
+    <value>I am sorry but I afraid I am not able to provide adequate feedback to your input.</value>
+  </data>
+  <data name="ErrorUnsupportedOrganization" xml:space="preserve">
+    <value>I am sorry but I can only speak for some of the professional services firms. Perhaps let me ask again...</value>
+  </data>
+  <data name="ResponseEnd" xml:space="preserve">
+    <value>Let me know if you have more question on career in the field of professional services.</value>
+  </data>
+  <data name="PromptQuestion" xml:space="preserve">
+    <value>What is your question?</value>
+  </data>
+  <data name="RepromptQuestion" xml:space="preserve">
+    <value>What other {0} question do your have?</value>
   </data>
   <data name="Greeting" xml:space="preserve">
     <value>Hello {0}! I can help you with some career advise in field of professional services.</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Needed some of my career advise?</value>
   </data>
 </root>

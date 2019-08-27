@@ -20,17 +20,11 @@ namespace Microsoft.CareersBot
     public class RootDialog : AdaptiveCardDialog
     {
         /// <summary>
-        /// Used to reference persisted values in the dialog
-        /// </summary>
-        private const string PersistedValues = "values";
-        private const string DialogUser = "user";
-
-        /// <summary>
         /// The names of the dialogs
         /// </summary>
-        private const string MenuPrompt = "menu-prompt";
-        private const string MenuRetryPrompt = "menu-retry-prompt";
-        private const string MenuOptions = "menu-options";
+        public const string MenuPrompt = "menu-prompt";
+        public const string MenuRetryPrompt = "menu-retry-prompt";
+        public const string MenuOptions = "menu-options";
 
         // The dictionary containing the adaptive cards to the menu prompts
         private readonly Dictionary<string, string> cards = new Dictionary<string, string>()
@@ -39,29 +33,13 @@ namespace Microsoft.CareersBot
             { MenuRetryPrompt, Path.Combine(".", "Resources", "RetryMenuCard.json") }
         };
 
-        // An enum of the companies supported
-        private enum Companies
-        {
-            KPMG,
-            Deloitte,
-            EY,
-            PWC,
-            NotSupported
-        }
-
-        private class User
-        {
-            /// <summary>
-            /// Whether or not a greeting message was sent to the user in a conversation
-            /// </summary>
-            /// <value></value>
-            public bool WasGreeted { get; set; } = false;
-        }
-
         /// <summary>
         /// The localized strings
         /// </summary>
         private StringResource stringResource;
+
+        // The LUIS recognizer
+        private CareerAdviseRecognizer recognizer;
 
         private UserState userState;
 
@@ -70,14 +48,20 @@ namespace Microsoft.CareersBot
         /// </summary>
         /// <param name="userState">The state of the user dialog</param>
         /// <returns></returns>
-        public RootDialog(StringResource stringResource, UserState userState) : base("root")
+        public RootDialog(
+            StringResource stringResource,
+            CareerAdviseRecognizer recognizer,
+            KnowledgeBaseFactory factory,
+            UserState userState) : base("root")
         {
             this.stringResource = stringResource;
+            this.recognizer = recognizer;
             this.userState = userState;
 
             // Add the prompts
             AddDialog(new ChoicePrompt(MenuPrompt, ChoiceValidation));
-            AddDialog(new KpmgCareerDialog(Companies.KPMG.ToString()));
+            AddDialog(new KpmgCareerDialog(Companies.KPMG.ToString(), stringResource, recognizer, factory, userState));
+            AddDialog(new TextPrompt(Companies.EY.ToString()));
 
             // Defines a simple two step Waterfall to test the slot dialog.
             AddDialog(new WaterfallDialog(MenuOptions, new WaterfallStep[]
@@ -96,13 +80,22 @@ namespace Microsoft.CareersBot
         /// <param name="promptContext">The context of the prompt</param>
         /// <param name="cancellationToken">The cancellation token</param>
         /// <returns></returns>
-        private Task<bool> ChoiceValidation(PromptValidatorContext<FoundChoice> promptContext, CancellationToken cancellationToken)
+        private async Task<bool> ChoiceValidation(PromptValidatorContext<FoundChoice> promptContext, CancellationToken cancellationToken)
         {
-            var val = promptContext.Context.Activity.Text;
             Companies value;
-            if (!Enum.TryParse(val, true, out value))
+            if (recognizer != null && recognizer.IsConfigured)
             {
-                value = Companies.NotSupported;
+                await SendTypingAsync(promptContext.Context, cancellationToken);
+                CareerAdvise luisResult = await recognizer.RecognizeAsync<CareerAdvise>(promptContext.Context, cancellationToken);
+                value = luisResult.Organization;
+            }
+            else
+            {
+                var val = promptContext.Context.Activity.Text;
+                if (!Enum.TryParse(val, true, out value))
+                {
+                    value = Companies.NotSupported;
+                }
             }
 
             switch (value)
@@ -111,9 +104,10 @@ namespace Microsoft.CareersBot
                 case Companies.Deloitte:
                 case Companies.EY:
                 case Companies.PWC:
-                    return Task.FromResult(true);
+                    promptContext.Recognized.Value = CreateChoice(value.ToString());
+                    return await Task.FromResult(true);
                 default:
-                    return Task.FromResult(false);
+                    return await Task.FromResult(false);
 
             }
         }
@@ -131,24 +125,73 @@ namespace Microsoft.CareersBot
                 throw new ArgumentNullException(nameof(stepContext));
             }
 
-            AdaptiveCard card = CreateAdaptiveCard(cards[MenuPrompt]);
             var userStateAccessor = userState.CreateProperty<ConversationMember>(nameof(ConversationMember));
             var user = await userStateAccessor.GetAsync(stepContext.Context, () => null);
-            if (!user.WasGreeted)
+
+            if (recognizer == null || !recognizer.IsConfigured)
             {
-                var response = String.Format(stringResource.Greeting, stepContext.Context.Activity.From.Name);
-                await stepContext.Context.SendActivityAsync(MessageFactory.Text(response), cancellationToken);
+                if (!user.WasGreeted)
+                {
+                    var response = String.Format(stringResource.ResponseGreeting, stepContext.Context.Activity.From.Name);
+                    await stepContext.Context.SendActivityAsync(MessageFactory.Text(response), cancellationToken);
+                }
+
+                // If the LUIS model is not configured, we start the menu prompt
+                return await RunPromptAsync(stepContext, cancellationToken);
             }
 
-            return await stepContext.PromptAsync(
-                MenuPrompt,
-                new PromptOptions
+            // The step is called to re-prompt user
+            if (stepContext.Options != null)
+            {
+                Companies value = Companies.NotSupported;
+                if (!Enum.TryParse(stepContext.Options?.ToString(), true, out value))
                 {
-                    Prompt = (Activity)MessageFactory.Attachment(CreateAdaptiveCardAttachment(card)),
-                    RetryPrompt = (Activity)MessageFactory.Attachment(CreateAdaptiveCardAttachment(cards[MenuRetryPrompt])),
-                },
-                cancellationToken
-            );
+                    value = Companies.NotSupported;
+                }
+
+                switch (value)
+                {
+                    case Companies.KPMG:
+                    case Companies.Deloitte:
+                    case Companies.EY:
+                    case Companies.PWC:
+                        return await stepContext.NextAsync(CreateChoice(value.ToString()), cancellationToken);
+                    default:
+                        return await RunPromptAsync(stepContext, cancellationToken);
+                }
+            }
+            else
+            {
+                await SendTypingAsync(stepContext.Context, cancellationToken);
+                CareerAdvise luisResult = await recognizer.RecognizeAsync<CareerAdvise>(stepContext.Context, cancellationToken);
+
+                switch (luisResult.TopIntent().Intent)
+                {
+                    case CareerAdvise.Intent.Greeting:
+                        string response = !user.WasGreeted ? String.Format(stringResource.ResponseGreeting, stepContext.Context.Activity.From.Name) : stringResource.ResponseWelcome;
+                        await stepContext.Context.SendActivityAsync(MessageFactory.Text(response), cancellationToken);
+
+                        return await RunPromptAsync(stepContext, cancellationToken);
+                    case CareerAdvise.Intent.CareerQuestionType:
+                        stepContext.Values[Organization] = luisResult.Organization;
+                        stepContext.Values[QuestionType] = luisResult.QuestionType;
+
+                        if (luisResult.Organization == Companies.NotSupported)
+                        {
+                            return await RunPromptAsync(stepContext, cancellationToken);
+                        }
+                        else
+                        {
+                            return await stepContext.NextAsync(CreateChoice(luisResult.Organization.ToString()), cancellationToken);
+                        }
+                    default:
+                        // Sends a message to user to indicate the bot is unable to help and end the dialog
+                        await stepContext.Context.SendActivityAsync(MessageFactory.Text(stringResource.ErrorHelpNotFound), cancellationToken);
+                        await stepContext.Context.SendActivityAsync(MessageFactory.Text(stringResource.ResponseEnd), cancellationToken);
+
+                        return await stepContext.EndDialogAsync();
+                }
+            }
         }
 
         /// <summary>
@@ -160,6 +203,11 @@ namespace Microsoft.CareersBot
         private async Task<DialogTurnResult> ProcessResultsAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
             var val = stepContext.Context.Activity.Text;
+            if (stepContext.Result != null)
+            {
+                val = ((FoundChoice)stepContext.Result).Value;
+            }
+
             Companies value;
             if (!Enum.TryParse(val, true, out value))
             {
@@ -169,28 +217,70 @@ namespace Microsoft.CareersBot
             switch (value)
             {
                 case Companies.KPMG:
-                    return await stepContext.BeginDialogAsync(Companies.KPMG.ToString(), null, cancellationToken);
+                    return await stepContext.BeginDialogAsync(
+                        Companies.KPMG.ToString(),
+                        stepContext.Values.ContainsKey(QuestionType) ? stepContext.Values[QuestionType] : null,
+                        cancellationToken);
+                case Companies.EY:
+                    return await stepContext.PromptAsync(
+                        Companies.EY.ToString(),
+                        new PromptOptions
+                        {
+                            Prompt = (Activity)MessageFactory.Text("This is for testing..."),
+                        },
+                        cancellationToken);
                 default:
-                    // Sends a message to user to indicate the bot is unable to help
-                    await stepContext.Context.SendActivityAsync(MessageFactory.Text(stringResource.ErrorHelpNotFound), cancellationToken);
-
-                    // Call EndDialogAsync to indicate to the runtime that this is the end of our waterfall.
-                    return await stepContext.EndDialogAsync();
+                    // Sends a message to user to indicate the selection is not supported and restart the dialog
+                    await stepContext.Context.SendActivityAsync(MessageFactory.Text(stringResource.ErrorUnsupportedOrganization), cancellationToken);
+                    return await stepContext.ReplaceDialogAsync(InitialDialogId, Companies.NotSupported.ToString(), cancellationToken);
             }
 
         }
 
         /// <summary>
-        /// Called when user return to the main menu
+        /// Called when user returns to the main menu as a result of ending a previous dialog.
         /// </summary>
         /// <param name="stepContext">The context object of the waterfall</param>
         /// <param name="cancellationToken">The cancellation token</param>
-        /// <returns></returns>
+        /// <returns>The <see cref="System.Threading.Tasks.Task{TResult}"/> for ending the dialog</returns>
         private async Task<DialogTurnResult> ResumeAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            // Feedback to user and end the waterfall
-            await stepContext.Context.SendActivityAsync(MessageFactory.Text(stringResource.ErrorHelpNotFound), cancellationToken);
-            return await stepContext.EndDialogAsync();
+            if (stepContext.Result != null)
+            {
+                return await stepContext.ReplaceDialogAsync(InitialDialogId, stepContext.Result?.ToString(), cancellationToken);
+            }
+            else
+            {
+                var userStateAccessor = userState.CreateProperty<ConversationMember>(nameof(ConversationMember));
+                var user = await userStateAccessor.GetAsync(stepContext.Context, () => new ConversationMember());
+
+                // Clears user selection
+                user.Company = Companies.NotSupported;
+                user.QuestionType = null;
+
+                // Sends a message to user then ends the dialog
+                await stepContext.Context.SendActivityAsync(MessageFactory.Text(stringResource.ResponseEnd), cancellationToken);
+                return await stepContext.EndDialogAsync();
+            }
+        }
+
+        /// <summary>
+        /// Runs the menu prompt
+        /// </summary>
+        /// <param name="stepContext">The current context object</param>
+        /// <param name="cancellationToken">The cancellation token</param>
+        /// <returns>A <see cref="DialogTurnResult"/> indicating the state of this dialog to the caller.</returns>
+        private Task<DialogTurnResult> RunPromptAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            return stepContext.PromptAsync(
+                MenuPrompt,
+                new PromptOptions
+                {
+                    Prompt = (Activity)MessageFactory.Attachment(CreateAdaptiveCardAttachment(cards[MenuPrompt])),
+                    RetryPrompt = (Activity)MessageFactory.Attachment(CreateAdaptiveCardAttachment(cards[MenuRetryPrompt])),
+                },
+                cancellationToken
+            );
         }
     }
 }

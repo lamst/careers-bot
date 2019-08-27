@@ -4,15 +4,49 @@
 
 using AdaptiveCards;
 using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
 using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Builder.Dialogs.Choices;
 using Newtonsoft.Json;
 
 namespace Microsoft.CareersBot
 {
     public abstract class AdaptiveCardDialog : ComponentDialog
     {
+        protected const string Organization = "organization";
+        protected const string QuestionType = "question-type";
+        
         public AdaptiveCardDialog(string dialogId) : base(dialogId) { }
+
+        /// <summary>
+        /// Creates a choice with the given value
+        /// </summary>
+        /// <param name="value">The value of the choice</param>
+        /// <returns>The <see cref="FoundChoice"/> created.</returns>
+        protected FoundChoice CreateChoice(string value)
+        {
+            return new FoundChoice()
+            {
+                Value = value,
+            };
+        }
+
+        /// <summary>
+        /// Sends typing indicator
+        /// </summary>
+        /// <param name="context">The current context object</param>
+        /// <param name="cancellationToken">The cancellation token</param>
+        /// <returns>The <see cref="Task"/> of sending the typing indicator</returns>
+        protected Task<ResourceResponse> SendTypingAsync(ITurnContext context, CancellationToken cancellationToken)
+        {
+            var reply = context.Activity.CreateReply();
+            reply.Type = ActivityTypes.Typing;
+            reply.Text = null;
+            return context.SendActivityAsync(reply, cancellationToken);
+        }
 
         /// <summary>
         /// Creates an adaptive card from the template.

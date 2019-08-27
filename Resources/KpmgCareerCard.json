@@ -24,7 +24,7 @@
         {
             "type": "Action.Submit",
             "title": "Assessment test",
-            "data": "assessment test"
+            "data": "Assessment test"
         },
         {
             "type": "Action.Submit",
@@ -39,7 +39,7 @@
         {
             "type": "Action.Submit",
             "title": "Starting new job",
-            "data": "Start new job"
+            "data": "Starting new job"
         }
     ]
 }

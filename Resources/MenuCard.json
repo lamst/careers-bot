@@ -5,7 +5,7 @@
     "body": [
         {
             "type": "TextBlock",
-            "text": "Which organization are you looking into furthering your career?",
+            "text": "Let me know which organization are you looking into furthering your career?",
             "wrap": true,
             "size": "default",
             "spacing": "none"

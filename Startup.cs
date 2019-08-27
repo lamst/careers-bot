@@ -21,11 +21,14 @@ namespace Microsoft.CareersBot
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
+            
             services.AddLocalization(config => { config.ResourcesPath = "Resources"; });
 
             // Create the localized string resource.
             services.AddSingleton<StringResource>();
+
+            // Add the HttpClientFactory to be used for the QnAMaker calls.
+            services.AddHttpClient();
 
             // Create the credential provider to be used with the Bot Framework Adapter.
             services.AddSingleton<ICredentialProvider, ConfigurationCredentialProvider>();
@@ -42,8 +45,14 @@ namespace Microsoft.CareersBot
             // Create the Conversation state. (Used by the Dialog system itself.)
             services.AddSingleton<ConversationState>();
 
-            // The Dialog that will be run by the bot.
+            // The dialogs that will be run by the bot.
             services.AddSingleton<RootDialog>();
+
+            // Register LUIS recognizer
+            services.AddSingleton<CareerAdviseRecognizer>();
+
+            // Register QnA Maker factory
+            services.AddSingleton<KnowledgeBaseFactory>();
 
             // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
             services.AddTransient<IBot, DialogBot<RootDialog>>();

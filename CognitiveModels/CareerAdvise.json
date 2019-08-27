@@ -1,0 +1,2848 @@
+{
+  "luis_schema_version": "3.2.0",
+  "versionId": "0.1",
+  "name": "CareerAdvise",
+  "desc": "A sample chatbot",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "intents": [
+    {
+      "name": "CareerQuestionType"
+    },
+    {
+      "name": "GoBack",
+      "inherits": {
+        "domain_name": "Communication",
+        "model_name": "GoBack"
+      }
+    },
+    {
+      "name": "Greeting"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [],
+  "composites": [],
+  "closedLists": [
+    {
+      "name": "CareerQuestion.Organization",
+      "subLists": [
+        {
+          "canonicalForm": "KPMG",
+          "list": [
+            "kpmg"
+          ]
+        },
+        {
+          "canonicalForm": "Deloitte",
+          "list": [
+            "dttl",
+            "deloitte touche",
+            "deloitte & touche"
+          ]
+        },
+        {
+          "canonicalForm": "EY",
+          "list": [
+            "ernst & young"
+          ]
+        },
+        {
+          "canonicalForm": "PWC",
+          "list": [
+            "PricewaterhouseCoopers"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "CareerQuestion.Type",
+      "subLists": [
+        {
+          "canonicalForm": "general",
+          "list": [
+            "general questions"
+          ]
+        },
+        {
+          "canonicalForm": "apply",
+          "list": [
+            "application",
+            "applying"
+          ]
+        },
+        {
+          "canonicalForm": "assessment",
+          "list": [
+            "assessment test",
+            "test",
+            "appraisal",
+            "evaluation",
+            "evaluate"
+          ]
+        },
+        {
+          "canonicalForm": "interviews",
+          "list": [
+            "interview"
+          ]
+        },
+        {
+          "canonicalForm": "offer",
+          "list": [
+            "the offer stage",
+            "offering",
+            "offered"
+          ]
+        },
+        {
+          "canonicalForm": "starting",
+          "list": [
+            "starting new job",
+            "new job",
+            "start job",
+            "starting a new job",
+            "hired"
+          ]
+        },
+        {
+          "canonicalForm": "none",
+          "list": [
+            "don't know",
+            "no idea",
+            "where to start",
+            "how to start"
+          ]
+        }
+      ],
+      "roles": []
+    }
+  ],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "access my job notes from yesterday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "access my movies note from this morning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "access my study notes from this week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add a new note called reading list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add a new note for wedding plan",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add a note and call it music",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add a note and call music",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add a note and title go shopping",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add a note for project",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add at the end of note called candiate story",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add hiking plan in the last page of word to my to-do note.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add luke and sara to the invite note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add my thoughts of this book to my reading note.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add paper towels to the costco list my costco note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add prepare the report to the boss to my music note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add production plan to client’s reporting note created yesterday.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add read deep learning papers to the paper to read note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add sentence to note candiate story",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add some things in songs to learn notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add some things on my chores note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add some things to that thanksgiving shopping notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add something in holiday to do notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add something in this naughty or nice note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add something on my household items note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add something to the hardware store notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add stuff to that movies to download notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add take the ticket to the note entitled songs list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add text to note called music",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add text to paper to read note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add that to my go-shopping list.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add the sentence call david to the family note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add this new novel to my reading note.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add this thing on my costco shopping notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add this thing on our new years resolution note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add this thing to that next actions notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add this titanic movie to my want-to-see note.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add this to my to-do list.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add this to the sams club notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add to movie to watch note test the software",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add to my exam note we found love",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "all notes for things to buy notes delete",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "alter title to shopping",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "am i able to add a sentence to the wedding plan note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "any note about planning that i made this month read aloud",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "are you able to change the new title to contact names",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "are you able to create a new note for this report",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "are you able to delete the note from visiter",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "are you able to open the vocation plan note that i created today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "are you able to read the movie to watch note to me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "assessment inquiry",
+      "intent": "CareerQuestionType",
+      "entities": []
+    },
+    {
+      "text": "back one step",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "back please",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "back the last step",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "before i create a new note erase older reading notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "before i make a new note erase older homework notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "before i make a new note erase outdated study notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "bring up the best feminist book on the french revolution note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "build a new note about things to buy",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "butter to home note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call the note history",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "call the tasks note candiate story",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you add maths homework to my study note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you add sentence about visiter",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you add take a taxi to the airport to my vocation note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you change the titled note for luke to invitation list instead",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you clear the note called something important",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you clear the note title exam",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you create a new note for me titled reading list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you create a note called movies",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you create a note titled homework",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you go to my notes about the family and read them aloud",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you make the current note title change to wedding plan",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you open my guideline note for me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you open my report note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you open project note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you open the import things note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you open today s note called visiter",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you please make the note called things need to for repairs to exam instead",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you please make the work note to life note instead",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you please open my note titled wedding plan",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you please open up my note from yesterdays afternoon called history summary note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you read today s note project status aloud for me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "candiate story note deleted them all",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change note to project status",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change the name of current note to cooking recipe.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change the name of this note to weekend plan.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change the title of my note to home",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change the title to math homework please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change this current note title to school",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change this note to material",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change title to guideline note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change title to language",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change title to sleep record",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change title to wedding plan",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "check the last appointment time add to my vocabulary note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear all content of job note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear all content of learning note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear all wedding plan note from yesterday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear everthing in the meeting note.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear everything on my language note from yesterday evening",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear last week material note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear my songs to listen note from last month",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear out my plan note for this weekend.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear that note from monday evening called songs list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear the groceries note from yesterday.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear the info from my vocabulary notes this year",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear the shopping notes from this month",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "clear this month s songs to listen note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "close history summary note please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "close invitation list note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "close my project note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "close my work note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "close something important note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "close songs to listen note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "close the history summary note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "close the note titled songs list please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "close the to-do list for today.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cortana change planning title to plans in note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cortana edit note title visiter to daily agenda",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "could you start me a note called work and put take my dog to the doctor on it",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "creat a note and call it school tasks",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a brand new note about my paper to read",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a language note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a new conflict report note.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a new note and the title would be school",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a new note for me and call it wedding",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a new note for visiter please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a new note with the title music",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a note and call it paper to read",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a note for my things to buy",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a note to candiate story",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a to-do list note as team members’ daily goal.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create new note named music",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create note in evernote called work",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create songs to listen note go to supermarket",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete all data in the note called writing",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete all home notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete all items from work note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete all items in my note called movie to watch from around 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete all items in plan note for me please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete all math homework notes from last month morning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete all notes from around 3 pm with family in title",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete all things to do notes created around 3 pm on my phone",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete all vocation plan notes from family",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete all websites note from last week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete content related to music from my note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete information about swimming from the sports note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete last content about running from sports note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete my note called candiate story",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete my note called summary that i wrote this month",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete my paper to read note from last week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete my planning note from yesterday evening",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete note from 3 days ago called music",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete the candiate story note from my folder",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete the note called local machine created this sunday.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete the note called work that i made last month",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete the note named room decoration.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete the note whose name is running",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "deleted monday evening notes on movie to watch",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "done with project status note thank you",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "edit note title change it to guideline",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "edit note title to things to do",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "edit title on note to movies",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "end movie to watch note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "end the music note please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "enter take photos into things to do note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "enter this sentence watch the tv into home note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "erase my books to read note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "erase my meeting note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "erase my summary note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "erase songs list note from last week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "erase the music note that i made on this year",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "erase the wedding plan note made on monday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "evaluation of candidates",
+      "intent": "CareerQuestionType",
+      "entities": []
+    },
+    {
+      "text": "favour please loudly read my note for family dated this week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "favour please read for me loudly that planning note i did yesterday evening",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "fill the planning note with a little more info",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find and open reading list note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "find the holiday plan note and open it",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "fing and open food note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "from guideline deleted all notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "get rid of all from vocation note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "get rid of my vocation note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "get rid of my work plan note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "get rid of running from the note called sports",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "get rid of science part from study note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "get rid of the first sentence in the work notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "give me a new note named poets",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "give me a note for operating system",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "go ahead add this the sentence make a speech about japan please on my note for party planning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "go ahead quickly add contact the customer services to things to do note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "go and close that vocation note for me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "go and close the songs to listen note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "go and have the note for math homework be closed",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "go and make sure the study note closed",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "go back",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "go back a step",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "go back one step",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "go back please",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "go back the last step",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "go back the previous step",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "go back to the last action",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "go back to the last step",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "go back to the main menu",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "go back to the previous step",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "go back to twitter",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "go inside the import things note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "go through the last two months and delete all notes titled things to do",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "go to the shopping list note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "have check twitter message inserted into wedding note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "help me creat a note whose name is books to read",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "help me delete the movie to watch note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "help me to change the name of things to do into tasks",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hey close my report note will you",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hey go and check note titled homework from this week s date and read it aloud",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hey google please close the computer science note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hey there",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hi there",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how about we add book a meeting for discussion to my work reading list notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how are you with import things as a new note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how can i add a sentence to the songs list note from yesterday evening",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how can i see the school note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how do i create a new note for the history summary",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i am starting a new job",
+      "intent": "CareerQuestionType",
+      "entities": []
+    },
+    {
+      "text": "i can t remember what i wrote so please read the school note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i created shopping note yesterday and now i want to delete it",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i d like to add finish the report to the vocabulary note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i d like to change the title of the note i created yesterday night to import things",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i d like to change the title of the note i made yesterday night to things to do",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i d like to create a note called exam",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i d like to have a new note that is called something important",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i d like to make a movies note please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i d like to make the note for bob to be titled exam instead of details",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i d like to put in titanic to my operating system note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i d like to see the note i created sunday about wedding plan",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i d like to see what is on reading list note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i d like to start fresh so erase my things to buy notes from this month",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i have general questions",
+      "intent": "CareerQuestionType",
+      "entities": []
+    },
+    {
+      "text": "i have interview questions",
+      "intent": "CareerQuestionType",
+      "entities": []
+    },
+    {
+      "text": "i need a new note and call it work",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need a new note for my party planning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need a new note for this material",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need a new note started and call it wedding",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need a new note titled music",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need a new note with the title report",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need exam to be the title of the current note now",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need help to close the work note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need paper to read note cleared",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need the information about swimming deleted from sports note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need the music note deleted",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need the note called things to do cleared that was from yesterday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need the note from monday evening opened titled things to do",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need the work note cleared",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need to add a sentence to the paper to read note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need to add give a talk about computer vision to my planning note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need to go back",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "i need to know what is on my shopping note,open it",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need to remember what i wrote in my reading list notes from around 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need work plan note cleared",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need you to close the note called shopping",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need you to create a new vocation plan note for me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need you to delete my material note from this week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i need you to read the songs to listen note to me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i really need the math homework note opened",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i received an offer",
+      "intent": "CareerQuestionType",
+      "entities": []
+    },
+    {
+      "text": "i wanna edit the title to project status",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want a my scheduling note called history summary",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want edit the name to nice restrants",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to add a sentence to wedding note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to add information to invitation list note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to change the current title of the note to shopping",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to clear the invitation list note from yesterday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to close that current vocabulary note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to create a new note called guideline",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to delete the note called candiate story",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to designate invitation list as this note s new name",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to erase all of the old language notes i made yesterday evening and start fresh",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to go back",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "i want to have a note about homework",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to have the songs list note be closed",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to make a note named songs list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to make another note for holiday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want you change this existing note s title to songs list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want you to create a note entitled visiter",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want you to delete all notes for work created this morning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want you to delete that note for reading list that i did last week",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want you to go check yesterdays afternoon s visiter note and read it aloud",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want you to have this note s title changed to shopping",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want you to look for my import things note and add the sentence book a meeting for discussion",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want you to make this existing note s title to be wedding plan",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want you to read aloud that wedding plan note from sunday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i was hired by kpmg",
+      "intent": "CareerQuestionType",
+      "entities": []
+    },
+    {
+      "text": "i would like to go back",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "i'd like to see my wedding plan note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "identify my note as vocation plan henceforth",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i'm naming the note as reading note.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "in my life note add house cleaning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "in my visiter note add test the software",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "in my work note add have an interview",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "initiate a unique note for invitation list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "insert this sentence fruits and vegetables inside the shopping note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "instead of calling my note maintenance note call it movies",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "interview related",
+      "intent": "CareerQuestionType",
+      "entities": []
+    },
+    {
+      "text": "introduce another sentence into wedding plan note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "kindly check a note entitled reading list and open it please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "kindly check my language note from yesterday night",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "kindly check today s music note and open it",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "kindly create a note entitled shopping",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "kindly delete all music notes from this year",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "kindly delete the exam notes created 3 days ago",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "kindly do this open yesterdays afternoon s note for vocation plan and read it loudly",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "kindly make this existing note s title to be music",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "kindly make this existing note's name to be have lessons",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "kindly read my home notes from this morning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "let me see what‘s on my music note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "let s clear that history summary note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "let s make a new note called import things",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "look for my music note and add titanic",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "look for my note titled party planning and have this added buy a milk",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make a new note and title it computer science",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make a new note called language",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make a new note for me for shopping",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make a new note with title shopping",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make a note called vocation plan",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make a note titled daily life",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make an addition to the things to buy note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make movie to watch the new title for the note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make note title reading list",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make sure to delete all songs list notes from sunday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make sure to put songs to listen notes that were created this year to trash",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make the title contact names",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make the title happy days",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make title summary",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make traveling as the new name",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make wedding plan note cleared",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "modify note title to movies",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move back to the last page",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "my note sunday change the title to candiate story",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "name of the note is traveling note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "name the current note as purchase list.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "name the note as daily life",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "name the note as emergency contact list.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "named work note as things to do",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "new note called something important",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "new note for vocation please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "new note note for operating system",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "new note with title computer science",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "new planning note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "note my vocation plan needs",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "note title should change to contact names",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "note to remind me that attend meeting tomorrow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open a new note and register the title as family note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open a new note and register the title as home note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open all previous reporting notes.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open best feminist book on the french revolution note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open movies note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open music note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open my reading list note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open new note and register the title as family note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open note called school and add text put a meeting in fremont",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open operating system note dan created yesterday evening",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open the note as computer science from today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open the note entitled vocation from yesterday night s date",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open the note math homework from last month",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open the note named emergency contact list.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open this note exam",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open this week note about guideline",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open today s note called websites",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open uo the note called tasks",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open up things to do note and add create a meeting for group at the end",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "open vocation note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "place another sentence in the material note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please add a sentence to the music note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please add find suzan to my note titled planning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please add something to my basic programming to become a finacial engineer note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please add to the note math homework this read deep learning papers",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please browse my notes and delete all of the computer science ones",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please change that title to party planning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please change the title of this note to vocabulary",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please change the title of work note to study",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please clear the previous work plan note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please close my party planning note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please close the contact names note for me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please close the visiter note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please close work notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please create a note called something important",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please delete my summary note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please delete the note called sports",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please do change that note s title to vocabulary",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please do convert that existing note s title to exam",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please do delete that existing note s title and change to project",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please erase the last bit of the invitation list notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please find all the notes named plan and delete then",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please find and open the note titled report",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please find the note for wedding that we did yesterday",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please go back",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "please go to operating system and add we found love",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please go to the wedding note that i made 3 days ago",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please let me know task note's content and read out",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please make an additional party planning note of fruits and vegetables",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please make new note named something important",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please make sure to change this existing note s title to party planning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please open the note called computer science so i can add a sentence",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please open the note that is titles planning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please open the note titled wedding that was created monday evening",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please open vocation note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please read aloud for me the note for math homework i created yesterdays afternoon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please read any note that has wedding in the title",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please read my work note from today",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please read out loud the note wedding for me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please recite home reading list notes that i made around 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please return back",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "project notes are useless remove them",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "project status note for yesterday deleted them",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "pull up the party planning note from 3 days ago on my computer",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put down my project status ideas in a note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put go swimming on my sports note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put in wedding plan as a new title",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "put read tutorial on my project status note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "question",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "questions on how to apply",
+      "intent": "CareerQuestionType",
+      "entities": []
+    },
+    {
+      "text": "quickly add create a meeting for group to my math homework note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "quickly close that note titled paper to read",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "quickly have that note for vocabulary be closed",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "quickly open my report note and add spring cleaning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "quit current math homework note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "quit the last note called homework",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read aloud every note about vocation for me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read aloud my movie to watch note i started this year",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read aloud my note named songs to listen",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read aloud the note work",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read me my visiter note off evernote from operating system",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read me the note from around 3 pm called wedding plan",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read me the songs to listen note i made this year",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read my contact names note from this morning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read my evernote paper to read note from this month",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read my movie to watch note from this morning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read my note called birthday party.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read the material note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read the project note out loud",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read the songs to listen note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read the traveling plan note for this weekend.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read this vacation note.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "refer to the note as material for here on",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "refer to trip note as movie to watch",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "remove all content about music in current note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "remove all content in the learning note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "remove all information i put in my team’s note created yesterday.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "remove all sheets except the last one from my collaboration note.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "remove item one and two from my contact list note.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "remove music part from arts note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "remove running from sports note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "remove the first sentence in the recipe note.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "remove the second item in this travel plan note.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "remove the third item from holiday plan note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "remove wedding plan note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "rename last note as things to do",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "retitle next note paper to read",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "retitle note music",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "retitle note science",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "retitle this note as home",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "return",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "return back",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "return please",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "return to previous step",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "return to the last step",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "return to the previous step",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "roll back",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "rollback",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "save the last note as books to read",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "save this note as vocabulary now",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "see a dentist on my vocation note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "set title to project",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "set up new note with name summary",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show me last week visiter note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show my history summary note from 3 days ago",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show the vocation note i made yesterday night on my phone",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "something is not right",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "songs list note from around 3 pm please read it",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "songs list note lets clear all",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "spring cleaning add this to the note wedding",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "step back",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "strike out the holiday note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "summary is new title",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "switch title of this note out for guideline",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "take me to the songs to listen note from this morning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "take me to the wedding plan note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "take me to the writing note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "tell me how to create a new note for the project",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "thanks now will you closing the operating system note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the name of this note is work plan now",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the party planning note should have a message to give a talk about computer vision",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the title of the last note i created needs to be changed to vocation",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the title of this note change it to project",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "title change computer science",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "title of new note is contact names",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "title of the new note is tv shows",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "title should be things to do",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "update note family",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "visiter note delete",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "vocabulary note open please",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "wazzup",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "we need clean records of the new note's name",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "we need daily reports of a new note's name",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "we need math homework of a new note's name",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "we should go back",
+      "intent": "GoBack",
+      "entities": []
+    },
+    {
+      "text": "what does the school note say",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what does the shopping note say",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what s on my exam note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what’s on the meeting note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "whats on my paper to read note from around 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's on my reading list note,let me know",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "whatsup",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "whazzup",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "why can t you change the note title to school",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will you change the note title to websites for my latest note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will you close my note called home",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will you delete my history summary note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will you make a new something important note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will you please create a new note for me titled websites",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "work note lets clear all",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "would you clear the note from this week called wedding",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "would you close the operating system note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "would you mind checking the note for vocabulary and add the sentence read the book",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "would you mind closing the note titled history summary",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "would you mind deleting the note titled operating system",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "would you mind reading monday's note called go-shopping",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "would you please add call john to the note calls to make",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "would you please delete all notes for wedding plan from around 3 pm",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "would you please have all reading list notes be deleted from last week s date",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "would you please open the note called things to buy",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "would you please read me the note that was from last month called movie to watch",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "would you tell me the content of the project note from yesterday night",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "write note and name it operating system",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "write text contact my assistant after dinner on note called contact names",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "write text read e-mails on note called work",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "yesterday evening songs list note lets clear all",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "yo",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "you can't help",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "you do this please have the note for invitation list be closed",
+      "intent": "None",
+      "entities": []
+    }
+  ],
+  "settings": []
+}

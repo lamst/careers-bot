@@ -20,6 +20,16 @@ namespace Microsoft.CareersBot
 
         public string ErrorHelpNotFound => localizer["ErrorHelpNotFound"];
 
-        public string Greeting => localizer["Greeting"];
+        public string ErrorUnsupportedOrganization => localizer["ErrorUnsupportedOrganization"];
+
+        public string ResponseGreeting => localizer["Greeting"];
+
+        public string ResponseWelcome => localizer["Welcome"];
+
+        public string ResponseEnd => localizer["ResponseEnd"];
+
+        public string PromptQuestion => localizer["PromptQuestion"];
+
+        public string RepromptQuestion => localizer["RepromptQuestion"];
     }
 }
