@@ -10,6 +10,13 @@
       "name": "CareerQuestionType"
     },
     {
+      "name": "Finish",
+      "inherits": {
+        "domain_name": "Communication",
+        "model_name": "FinishTask"
+      }
+    },
+    {
       "name": "GoBack",
       "inherits": {
         "domain_name": "Communication",
@@ -52,7 +59,7 @@
         {
           "canonicalForm": "PWC",
           "list": [
-            "PricewaterhouseCoopers"
+            "pricewaterhousecoopers"
           ]
         }
       ],
@@ -65,13 +72,6 @@
           "canonicalForm": "general",
           "list": [
             "general questions"
-          ]
-        },
-        {
-          "canonicalForm": "apply",
-          "list": [
-            "application",
-            "applying"
           ]
         },
         {
@@ -115,6 +115,13 @@
             "no idea",
             "where to start",
             "how to start"
+          ]
+        },
+        {
+          "canonicalForm": "application",
+          "list": [
+            "apply",
+            "applying"
           ]
         }
       ],
@@ -375,6 +382,11 @@
     },
     {
       "text": "assessment inquiry",
+      "intent": "CareerQuestionType",
+      "entities": []
+    },
+    {
+      "text": "assessment question for deloitte",
       "intent": "CareerQuestionType",
       "entities": []
     },
@@ -714,6 +726,16 @@
       "entities": []
     },
     {
+      "text": "complete the task",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "completed",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
       "text": "cortana change planning title to plans in note",
       "intent": "None",
       "entities": []
@@ -924,6 +946,11 @@
       "entities": []
     },
     {
+      "text": "done",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
       "text": "done with project status note thank you",
       "intent": "None",
       "entities": []
@@ -944,6 +971,16 @@
       "entities": []
     },
     {
+      "text": "end",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "end it",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
       "text": "end movie to watch note",
       "intent": "None",
       "entities": []
@@ -951,6 +988,16 @@
     {
       "text": "end the music note please",
       "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "end the task",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "end this",
+      "intent": "Finish",
       "entities": []
     },
     {
@@ -1026,6 +1073,41 @@
     {
       "text": "fing and open food note",
       "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "finish",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "finish editing now, it's done",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "finish it",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "finish it now",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "finish the task",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "finish this",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "finished",
+      "intent": "Finish",
       "entities": []
     },
     {
@@ -1259,6 +1341,11 @@
       "entities": []
     },
     {
+      "text": "i am done",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
       "text": "i am starting a new job",
       "intent": "CareerQuestionType",
       "entities": []
@@ -1329,12 +1416,32 @@
       "entities": []
     },
     {
+      "text": "i finished",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
       "text": "i have general questions",
       "intent": "CareerQuestionType",
       "entities": []
     },
     {
+      "text": "i have general questions for kpmg",
+      "intent": "CareerQuestionType",
+      "entities": []
+    },
+    {
+      "text": "i have interview question for ey",
+      "intent": "CareerQuestionType",
+      "entities": []
+    },
+    {
       "text": "i have interview questions",
+      "intent": "CareerQuestionType",
+      "entities": []
+    },
+    {
+      "text": "i have question about applying kpmg",
       "intent": "CareerQuestionType",
       "entities": []
     },
@@ -1619,6 +1726,26 @@
       "entities": []
     },
     {
+      "text": "i'm all done",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "i'm done",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "i'm done soon",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "i'm done yeah",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
       "text": "i'm naming the note as reading note.",
       "intent": "None",
       "entities": []
@@ -1661,6 +1788,26 @@
     {
       "text": "introduce another sentence into wedding plan note",
       "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "it's completed",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "it's done",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "it's finished",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "i've finished",
+      "intent": "Finish",
       "entities": []
     },
     {
@@ -2584,13 +2731,68 @@
       "entities": []
     },
     {
+      "text": "task end",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "task is over",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
       "text": "tell me how to create a new note for the project",
       "intent": "None",
       "entities": []
     },
     {
+      "text": "thank you",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
       "text": "thanks now will you closing the operating system note",
       "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "that is all",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "that is all for today",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "that's all",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "that's all for now",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "that's all thank you",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "that's done",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "that's it",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "the email is finished",
+      "intent": "Finish",
       "entities": []
     },
     {
@@ -2611,6 +2813,11 @@
     {
       "text": "the title of this note change it to project",
       "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "they are all done",
+      "intent": "Finish",
       "entities": []
     },
     {
@@ -2651,6 +2858,16 @@
     {
       "text": "wazzup",
       "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "we are done",
+      "intent": "Finish",
+      "entities": []
+    },
+    {
+      "text": "we can finish it",
+      "intent": "Finish",
       "entities": []
     },
     {
